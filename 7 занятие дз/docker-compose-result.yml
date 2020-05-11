@@ -1,0 +1,18 @@
+version: "3"
+services:
+ 
+  result:
+    build: ./result
+    command: nodemon server.js
+    volumes:
+      - ./result:/app
+    ports:
+      - "5001:80"
+      - "5858:5858"
+    networks:
+      - front-tier
+      - back-tier
+
+networks:
+  front-tier:
+  back-tier:
